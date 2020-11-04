@@ -15,31 +15,35 @@
       function playRound(playerSelection, computerSelection) {
         switch (playerSelection.toLowerCase()) {
           case "rock":
-            if (computerSelection.toLowerCase == "paper") {
+            if (computerSelection.toLowerCase() == "paper") {
               return "You lost! Paper beats rock!";
-            } else if (computerSelection.toLowerCase == "scissors") {
+            } else if (computerSelection.toLowerCase() == "scissors") {
               return "You won! Rock beats scissors!";
-            } else if (computerSelection.toLowerCase == "rock") {
+            } else if (computerSelection.toLowerCase() == "rock") {
               return "It is a tie!";
             }
             break;
           case "scissors":
-            if (computerSelection.toLowerCase == "paper") {
+            if (computerSelection.toLowerCase() == "paper") {
               return "You won! Scissors beats paper!"; 
-            } else if (computerSelection.toLowerCase == "rock") {
+            } else if (computerSelection.toLowerCase() == "rock") {
               return "You lost! Rock beats scissors!";
             } else {
               return "It is a tie!";
             }
             break;
           case "paper":
-            if (computerSelection.toLowerCase == "scissors") {
+            console.log(computerSelection.toLowerCase())
+            if (computerSelection.toLowerCase() == "scissors") {
               return "You lost! Scissors beats paper";
-            } else if (computerSelection.toLowerCase == "rock") {
-              return "You won! Scissors beats paper";
+            } else if (computerSelection.toLowerCase() == "rock") {
+              return "You won! Paper beats rock";
             } else {
               return "It is a tie!";
             }
+            break;
+          default:
+            return "Error";
         }  
       }
     </script>
