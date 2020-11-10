@@ -1,4 +1,9 @@
 const selectionButtons = document.querySelectorAll(".selection-buttons");
+const currentScore = document.getElementById("current-score");
+const playerScore = document.getElementById("player-score");
+const computerScore = document.getElementById("computer-score");
+const newGameButton = document.getElementById("new-game-button");
+const announcement = document.getElementById("announcement");
 
 selectionButtons.forEach((button) => {
   button.addEventListener("click", (e) =>{
@@ -11,6 +16,21 @@ function computerPlay() {
   const randomSelection = Math.floor(Math.random() * options.length);
   return options[randomSelection];
 }
+
+function displayWinner(result) {
+  switch (result) {
+    case 1:
+      announcement.textContent = "You win this round";
+      return 1;
+    case -1:
+      announcement.textContent = "Computer wins this round";
+      return -1;
+    default:
+      announcement.textContent = "It is a tie.";
+      return 0;
+  }
+}
+
 
 function playRound(playerSelection, computerSelection) {
   switch (playerSelection) {
@@ -50,19 +70,6 @@ function game(playerSelection) {
   
   let computerSelection = computerPlay();
   let gameResult = playRound(playerSelection, computerSelection);
+  displayWinner(gameResult);
 
-  switch(gameResult) {
-    case 1:
-      console.log("Player wins this round!");
-      break;
-    case -1:
-      console.log("Computer wins this round!");
-      break;
-    case 0:
-      console.log("It is a tie");
-      break;
-    default:
-      break;
-  }
-  
 }
