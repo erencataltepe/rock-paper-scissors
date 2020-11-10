@@ -1,3 +1,11 @@
+const selectionButtons = document.querySelectorAll(".selection-buttons");
+
+selectionButtons.forEach((button) => {
+  button.addEventListener("click", (e) =>{
+    console.log(e.target.id);
+  })
+})
+
 function computerPlay() {
   const options = ["rock", "paper", "scissors"];
   const randomSelection = Math.floor(Math.random() * options.length);
@@ -76,5 +84,3 @@ function game() {
     console.log("It is a tie!");
   }
 }
-
-game();
