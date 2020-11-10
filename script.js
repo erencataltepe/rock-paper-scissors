@@ -6,14 +6,37 @@ const announcement = document.getElementById("announcement");
 
 selectionButtons.forEach((button) => {
   button.addEventListener("click", (e) =>{
-    game(e.target.id);
+    if (!isGameOver()) {
+      game(e.target.id);
+    }
   })
 })
+
+newGameButton.addEventListener("click", resetGame)
+
+
+function resetGame() {
+  playerScore.textContent = "0";
+  computerScore.textContent = "0";
+  announcement.textContent = "";
+}
 
 function computerPlay() {
   const options = ["rock", "paper", "scissors"];
   const randomSelection = Math.floor(Math.random() * options.length);
   return options[randomSelection];
+}
+
+function isGameOver() {
+  if (Number(playerScore.textContent) === 5) {
+    announcement.textContent = "Congrats. You win the game.";
+    return true;
+  } else if (Number(computerScore.textContent) === 5) {
+    announcement.textContent = "Sorry. Computer wins the game.";
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function displayWinner(result) {
@@ -83,4 +106,5 @@ function game(playerSelection) {
   let roundResult = playRound(playerSelection, computerSelection);
   displayWinner(roundResult);
   changeScore(roundResult);
+  isGameOver();
 }
