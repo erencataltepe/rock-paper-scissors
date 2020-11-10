@@ -2,18 +2,30 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title></title>
   </head>
   <body>
-    <button class="selection-buttons" id="rock">Rock</button>
-    <button class="selection-buttons" id="paper">Paper</button>
-    <button class="selection-buttons" id="scissors">Scissors</button>
-    <button id="new-game-button">New Game</button>
-    <div class="scores">Player Score: <span id="player-score">0</span></div>
-    <div class="scores">Computer Score: <span id="computer-score">0</span><div>
-    <div>
-      <h2 id="announcement"></h2>
-    </div>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+    </header>
+    <main>
+      <section id="control-section">
+        <div class="scores">Player Score: <span id="player-score">0</span></div>
+        <button id="new-game-button">New Game</button>
+        <div class="scores">Computer Score: <span id="computer-score">0</span><div></div>
+      </section>
+      <section id="main-game-section">
+        <button class="selection-buttons" id="rock">Rock</button>
+        <button class="selection-buttons" id="paper">Paper</button>
+        <button class="selection-buttons" id="scissors">Scissors</button>    
+      </section>
+      <section id="info-section">
+          <h2 id="announcement"></h2>
+      </section>  
+    </main>
+    
+    
     <script src="script.js"></script>
   </body>
 </html>
