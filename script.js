@@ -31,6 +31,18 @@ function displayWinner(result) {
   }
 }
 
+function changeScore(result) {
+  switch (result) {
+    case 1:
+      playerScore.textContent = Number(playerScore.textContent) + 1;
+      break;
+    case -1:
+      computerScore.textContent = Number(computerScore.textContent) + 1;
+    default:
+      break;
+  }
+}
+
 
 function playRound(playerSelection, computerSelection) {
   switch (playerSelection) {
@@ -69,7 +81,7 @@ function playRound(playerSelection, computerSelection) {
 function game(playerSelection) {
   
   let computerSelection = computerPlay();
-  let gameResult = playRound(playerSelection, computerSelection);
-  displayWinner(gameResult);
-
+  let roundResult = playRound(playerSelection, computerSelection);
+  displayWinner(roundResult);
+  changeScore(roundResult);
 }
