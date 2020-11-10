@@ -1,2 +1,2 @@
 # Rock, Paper, Scissors
-A basic command line rock-paper-scissors game, built with pure Javascript.
+A basic  rock-paper-scissors game, built with pure Javascript, HTML & CSS.
