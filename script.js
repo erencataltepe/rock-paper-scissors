@@ -1,5 +1,4 @@
 const selectionButtons = document.querySelectorAll(".selection-buttons");
-const currentScore = document.getElementById("current-score");
 const playerScore = document.getElementById("player-score");
 const computerScore = document.getElementById("computer-score");
 const newGameButton = document.getElementById("new-game-button");
