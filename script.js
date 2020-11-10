@@ -42,32 +42,30 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
   
-  for (let i = 0; i <= 4; i++) {
-    let playerSelection = prompt("Rock, paper or scissors?").toLocaleLowerCase();
-    let computerSelection = computerPlay();
-    let gameResult = playRound(playerSelection, computerSelection);
+  let playerSelection = prompt("Rock, paper or scissors?").toLocaleLowerCase();
+  let computerSelection = computerPlay();
+  let gameResult = playRound(playerSelection, computerSelection);
 
-    switch(gameResult) {
-      case 1:
-        playerScore += 1;
-        console.log("Player wins this round!");
-        console.log(`Player score is ${playerScore}`);
-        console.log(`Computer score is ${computerScore}`);
-        break;
-      case -1:
-        computerScore += 1;
-        console.log("Computer wins this round!");
-        console.log(`Player score is ${playerScore}`);
-        console.log(`Computer score is ${computerScore}`);
-        break;
-      case 0:
-        console.log("It is a tie");
-        console.log(`Player score is ${playerScore}`);
-        console.log(`Computer score is ${computerScore}`);
-        break;
-      default:
-        break;
-    }
+  switch(gameResult) {
+    case 1:
+      playerScore += 1;
+      console.log("Player wins this round!");
+      console.log(`Player score is ${playerScore}`);
+      console.log(`Computer score is ${computerScore}`);
+      break;
+    case -1:
+      computerScore += 1;
+      console.log("Computer wins this round!");
+      console.log(`Player score is ${playerScore}`);
+      console.log(`Computer score is ${computerScore}`);
+      break;
+    case 0:
+      console.log("It is a tie");
+      console.log(`Player score is ${playerScore}`);
+      console.log(`Computer score is ${computerScore}`);
+      break;
+    default:
+      break;
   }
   
   if (playerScore > computerScore) {
