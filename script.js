@@ -9,4 +9,9 @@ function getComputerChoice() {
   }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+  const userChoice = prompt("What is your choice?");
+  return userChoice;
+}
+
+console.log(getHumanChoice());
